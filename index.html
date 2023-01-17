@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Document</title>
+    <style>
+        .container {
+            background: #65BDC0;
+            border-radius: 70px;
+            width: 1273px;
+            height: 905px;
+            display: grid;
+            grid-template-columns: 0.1fr 0.9fr;
+        }
+
+        .leftpanel {
+            border: 1px dashed black;
+            border-radius: 60px;
+            width: 70%;
+            margin-left: 20px;
+            margin-top: 36px;
+            height: 600px;
+            display: grid;
+            grid-template-rows: repeat(8, 1fr);
+            justify-items: center
+        }
+
+        .main {
+            /* width: 100%; */
+            border: 1px dashed blue;
+            height: 905px;
+            background: #ffffff;
+            border-radius: 70px;
+            display: grid;
+            grid-template-columns: 5% 55% 34% 6%;
+            grid-template-rows: 60px 0.9fr 1.1fr 60px;
+            grid-template-areas:
+                ". . header ."
+                ". main_content main_content ."
+                ". main_content main_content ."
+                ". footer footer .";
+        }
+
+        .header {
+            background: #f87dc5;
+            grid-area: header;
+            border: 1px dashed blue;
+            border-radius: 90px;
+            height: 60px;
+            width: 100%;
+
+        }
+
+        .main_content {
+            background: #d1d0a4;
+            border: 1px dashed blue;
+            border-radius: 70px;
+            grid-area: main_content;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="leftpanel">
+            <img src="./assets/images/logo.png" alt="logo">
+        </div>
+
+        <div class="main">
+            <div class="header">menu</div>
+            <div class="main_content">content</div>
+
+
+        </div>
+
+
+    </div>
+</body>
+
+</html>
