@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/style.css">
     <title>Document</title>
     <style>
+        /* бирюзовый фон */
         .container {
             background: #65BDC0;
             border-radius: 70px;
@@ -15,9 +16,13 @@
             height: 905px;
             display: grid;
             grid-template-columns: 0.1fr 0.9fr;
+            grid-template-areas:
+                "leftpanel main";
         }
 
+        /* левая вертикальная панель */
         .leftpanel {
+            grid-area: leftpanel;
             /* border: 1px dashed black; */
             border-radius: 60px;
             width: 70%;
@@ -37,6 +42,7 @@
             justify-items: center;
         }
 
+        /* левое вертикальное меню */
         .signs {
             grid-area: signs;
             display: grid;
@@ -44,27 +50,12 @@
 
         }
 
-        .main {
-            /* width: 100%; */
-            border: 1px dashed blue;
-            height: 905px;
-            background: #ffffff;
-            border-radius: 70px;
-            display: grid;
-            grid-template-columns: 5% 55% 34% 6%;
-            grid-template-rows: 60px 0.9fr 1.1fr 60px;
-            grid-template-areas:
-                ". . header ."
-                ". main_content main_content ."
-                ". main_content main_content ."
-                ". footer footer .";
-        }
-
         .header {
             /* background: #f87dc5; */
             /* border: 1px dashed blue; */
             grid-area: header;
             border-radius: 90px;
+            height: 60px;
             height: 50px;
             width: 100%;
             margin: 10px 0 0 0;
@@ -74,12 +65,14 @@
         .search {
             border-radius: 30px;
             margin: 15px;
-            border: 1px solid #65BDC0;
+            border: 1px solid #dbdbdb;
             float: left;
             width: 150px;
+            height: 20px;
 
         }
 
+        /* верхнее меню настроек */
         .fixing {
             width: 170px;
             height: 30px;
@@ -91,11 +84,93 @@
             padding: 10px;
         }
 
+        /* основной блок */
+        .main {
+            grid-area: main;
+            width: 100%;
+            border: 1px dashed blue;
+            height: 905px;
+            background: #ffffff;
+            border-radius: 70px;
+            display: grid;
+            grid-template-columns: 5% 55% 34% 4%;
+            grid-template-rows: 60px 1fr 1fr 60px;
+            grid-template-areas:
+                ". . header ."
+                ". main_content main_content ."
+                ". main_content main_content ."
+                ". footer footer .";
+        }
+
+
+
+        /* большой блок контента */
         .main_content {
-            /* background: #d1d0a4; */
+            grid-area: main_content;
+            background: #fcfbe5;
             border: 1px dashed blue;
             border-radius: 70px;
-            grid-area: main_content;
+            display: grid;
+            grid-template-columns: 80% 20%;
+            grid-template-rows: 0.2fr 1fr 1fr 0.2fr;
+            grid-template-areas:
+                ". ."
+                "mainbl rightpnl"
+                "mainbl rightpnl"
+                ". .";
+        }
+
+        /* горизонтальный блок контента */
+        .mainblock {
+            border: 1px dashed blue;
+            background: #cfd2f8;
+            grid-area: mainbl;
+
+        }
+
+        /* вертикальный блок */
+        .rightpanel {
+            background: #f0f7d3;
+            border: 1px dashed blue;
+            grid-area: rightpnl;
+            display: grid;
+        }
+
+        .mainblock__top {
+            background: #f6dbfc;
+            border: 1px dashed blue;
+            grid-area: mb__top;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            height: 30%;
+
+        }
+
+        .mainblock__down {
+            background: #f8f6d8;
+            border: 1px dashed blue;
+            grid-area: mb__down;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+        }
+
+        .img__rightpnl {
+            width: 181px;
+            height: 153px;
+        }
+
+        .img__topblock {
+            height: 204px;
+        }
+
+        .img__downblock {
+            width: 163px;
+            height: 131px;
+            margin: 12px;
         }
 
         .footer {
@@ -134,11 +209,28 @@
             <div class="main_content">
                 <div class="mainblock">
                     <h1>Kitchen</h1>
-                    <div class="mainblock__top"></div>
-                    <div class="mainblock__down"></div>
+                    <div class="mainblock__top">
+                        <img class="img__topblock" src="./assets/images/rooms_temp.png" alt="room_temperature">
+                        <img class="img__topblock" src="./assets/images/rooms_hum.png" alt="room_hum">
+                        <img class="img__topblock" src="./assets/images/rooms_light.png" alt="room_light">
+                    </div>
+                    <div class="mainblock__down">
+                        <img class="img__downblock" src="./assets/images/fridge.png" alt="fridge">
+                        <img class="img__downblock" src="./assets/images/kettle.png" alt="kettle">
+                        <img class="img__downblock" src="./assets/images/stove.png" alt="stove">
+                        <img class="img__downblock" src="./assets/images/dishwasher.png" alt="dishwasher">
+                        <img class="img__downblock" src="./assets/images/multicooker.png" alt="multicooker">
+                        <img class="img__downblock" src="./assets/images/tv.png" alt="tv">
+                        <img class="img__downblock" src="./assets/images/microwave.png" alt="microwave">
+                        <img class="img__downblock" src="./assets/images/indoorgrill.png" alt="indoorgrill">
+
+                    </div>
                 </div>
                 <div class="rightpanel">
-
+                    <img class="img__rightpnl" src="./assets/images/bedroom.png" alt="bedroom">
+                    <img class="img__rightpnl" src="./assets/images/kitchen.png" alt="kitchen">
+                    <img class="img__rightpnl" src="./assets/images/living.png" alt="living">
+                    <img class="img__rightpnl" src="./assets/images/bath.png" alt="bath">
                 </div>
             </div>
         </div>
